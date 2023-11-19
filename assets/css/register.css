@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wall-register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../image/north_background_login_desktop.png) no-repeat center;
+    background-size: cover;
+}
+
+.background-register{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 24px 120px;
+}
+
+.logo-toco{
+    width: 200px;
+    margin-bottom: 20px;
+
+}
+
+.content-register{
+    border: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #d6cdbc;
+    width: 100%;
+    font-size: 12px;
+    outline: 0 !important;
+    box-shadow: none;
+}
+
+.register{
+    background-color: #d8b979;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    min-height: 42px;
+    display: flex;
+    line-height: normal;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;  
+    margin-top: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input-err {
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 300;
+    align-self: flex-start;
+}
+
+
+.sugget-text{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.login{
+    font-weight: bold;
+    color: #d4b774;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.back-home{
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-home:hover{
+    text-decoration: underline;
+    color: rgb(65,88,208,100%);
+}

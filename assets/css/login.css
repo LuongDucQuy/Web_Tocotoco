@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wall-login{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(https://tocotocotea.com.vn/wp-content/themes/tocotocotea/assets/images/north_background_login_desktop.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-login{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    padding: 24px 120px;
+}
+
+img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+.logo-login{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login-content{
+    width: 100%;
+}
+
+.info-login{
+    background: 0 0;
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #d6cdbc;
+    width: 100%;
+    outline: 0 !important;
+    box-shadow: none;
+}
+
+.forgot-pass{
+    text-align: right;
+    margin-top: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #d4b774;
+}
+
+.login-button{
+    border-radius: 30px;
+    background-color: #d8b979;
+    margin-top: 24px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    min-height: 42px;
+    width: 100%;
+    overflow: visible;
+    height: auto;
+    line-height: normal;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sugget-text{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.create-acc a{
+    font-weight: bold;
+    color: #d4b774;
+    margin-left: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-home{
+    text-decoration: none;
+    color: #007bff;
+}
+
+.back-home:hover{
+    color: #0056b3;
+    text-decoration: underline;
+}
+

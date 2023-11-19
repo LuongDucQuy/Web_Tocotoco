@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="icon" href="./assets/image/favicon-32x32-1.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="wall-login">
+        <div class="background-login">
+            <img src="./assets/image/logo-login.png" alt="" class="logo-login">
+
+            <div class="login-content">
+                <input type="text" id="login-number" class="info-login" placeholder="Nhập số điện thoại của bạn">
+                <input type="password" id="login-password" class="info-login" placeholder="Nhập mật khẩu của bạn">
+                <div class="forgot-pass">Quên mật khẩu?</div>
+                <div class="login-button" onclick="performLogin()">Đăng nhập</div>
+                <div class="sugget-text">
+                    <div class="text">Bạn chưa có tài khoản?</div>
+                    <div class="create-acc"><a href="./register.html">Tạo tài khoản</a></div>
+                </div>
+                <div class="sugget-text">
+                    <a href="./homePage.html" class="back-home">Quay lại màn hình chính</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <script>
+        function performLogin() {
+            var loginNumber = document.getElementById("login-number").value;
+            var loginPassword = document.getElementById("login-password").value;
+
+            // Retrieve the registered user from localStorage
+            var registeredUser = JSON.parse(localStorage.getItem('registeredUser'));
+
+            if (registeredUser && loginNumber === registeredUser.phone && loginPassword === registeredUser.password) {
+                alert("Đăng nhập thành công");
+                // Redirect to the home page or any other page after successful login
+                window.location.href = './homePage.html'; // Adjust the filename if needed
+            } else {
+                alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+            }
+        }
+    </script>
+</body>
+</html>

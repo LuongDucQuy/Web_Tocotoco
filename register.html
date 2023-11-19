@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="icon" href="./assets/image/favicon-32x32-1.png" type="image/x-icon">
+    <title>Đăng ký</title>
+</head>
+<body>
+    <div class="wall-register">
+        <div class="background-register">
+            <img src="./assets/image/logo-login.png" alt="" class="logo-toco">
+            <input type="text" class="content-register" id="number" placeholder="Nhập số điện thoại của bạn">
+            <input type="password" class="content-register" id="password" placeholder="Nhập mật khẩu của bạn">
+            <input type="password" class="content-register" id="confirm-password" placeholder="Nhập lại mật khẩu của bạn">
+            <div class="register" onclick="CheckThongTin()">Đăng ký</div>
+            <div class="sugget-text">
+                <div class="text">Bạn đã có tài khoản?</div>
+                <div class="login" onclick="redirectToLogin()">Đăng nhập</div>
+            </div>
+
+            <div class="sugget-text">
+                <a href="homePage.html" class="back-home">Quay lại màn hình chính</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function redirectToLogin() {
+            window.location.href = 'login.html'; // Adjust the filename if needed
+        }
+
+        function saveRegistrationInfo() {
+            var phone = document.getElementById("number").value;
+            var pass = document.getElementById("password").value;
+
+            var user = {
+                phone: phone,
+                password: pass
+            };
+
+            // Lưu thông tin đăng ký vào localStorage
+            localStorage.setItem('registeredUser', JSON.stringify(user));
+
+            alert("Đăng ký thành công");
+            redirectToLogin();
+        }
+
+        function CheckThongTin() {
+
+            var phone = document.getElementById("number").value;
+            var testPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+            var pass = document.getElementById("password").value;
+            var testPass = /^(?=\S+$).{6,}$/;
+
+            var confirmPass = document.getElementById("confirm-password").value;
+
+            if (phone == "" || !testPhone.test(phone)) {
+                alert("Định dạng số điện thoại sai");
+            } else if (pass == "" || pass.includes(" ") || !testPass.test(pass)) {
+                alert("Định dạng mật khẩu sai");
+            } else if (confirmPass == "" || confirmPass !== pass) {
+                alert("Xác nhận mật khẩu sai");
+            } else {
+                alert("Đăng ký thành công");
+                redirectToLogin();
+            }
+        }
+    </script>
+</body>
+</html>
