@@ -83,12 +83,12 @@
                         <div class="list-product">
                             <div class="product" id="product1">
                                 <img src="./assets/image/O-Long-xoai-kem-coffee.jpg" alt="">
-                                <div class="product-name">Ô Long Xoài Kem Cà Phê</div>
+                                <div class="product-name" id="product1" >Ô Long Xoài Kem Cà Phê</div>
                                 <div class="product-price">
                                     <p class="product-origin-price">70,000đ</p>
                                     <div class="product-sale-price">62,000đ</div>
                                 </div>
-                                <div class="btn-increase">+</div>
+                                <div class="btn-increase" onclick="addToCart('product1')">+</div>
                             </div>
 
                             <div class="product" id="product1">
@@ -518,5 +518,47 @@
                         </div>
                     </div>
                 </div>
+            <script>
+                    function addToCart(productID) {
+                       // Lấy thông tin sản phẩm
+                       var product = document.getElementById(productID);
+                       var productName = product.querySelector(".product-name").innerText;
+                       var productPrice = parseFloat(product.querySelector(".product-origin-price").innerText.replace('đ', '').replace(',', ''));
+                 
+                       // Tìm phần giỏ hàng
+                       var cart = document.getElementById("cart");
+                 
+                       // Tạo một phần tử mới để thêm vào giỏ hàng
+                       var cartItem = document.createElement("div");
+                       cartItem.className = "cart-item";
+                       cartItem.innerHTML = `
+                          <div class="cart-item-name">${productName}</div>
+                          <div class="cart-item-price">${productPrice}đ</div>
+                       `;
+                 
+                       // Thêm sản phẩm vào giỏ hàng
+                       cart.appendChild(cartItem);
+                 
+                       // Cập nhật tổng giá trị trong giỏ hàng
+                       updateTotalPrice();
+                    }
+                 
+                    function updateTotalPrice() {
+                       // Tìm phần giỏ hàng và tất cả các giá trị sản phẩm
+                       var cart = document.getElementById("cart");
+                       var cartItems = cart.getElementsByClassName("cart-item");
+                       var totalPrice = 0;
+                 
+                       // Tính tổng giá trị
+                       for (var i = 0; i < cartItems.length; i++) {
+                          var priceText = cartItems[i].querySelector(".cart-item-price").innerText;
+                          totalPrice += parseFloat(priceText.replace('đ', '').replace(',', ''));
+                       }
+                 
+                       // Hiển thị tổng giá trị
+                       var totalElement = document.querySelector(".cart-ss2-four");
+                       totalElement.innerText = totalPrice + "đ";
+                    }
+                 </script>
 </body>
 </html>
